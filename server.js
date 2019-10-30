@@ -7,58 +7,55 @@ http.createServer(function (req, res) {
         'Content-Type': 'text/html'
     });
     var endPoint = req.url;
-    var queryData = url.parse(req.url, true).query;
-    console.log(queryData);
-    fs.mkdir();
-        fs.writeFile('writeMe.txt', data, function(err, result) {
-         if(err) console.log('error', err);
-       });
+    var queryData = url.parse(endPoint, true).query;
     
-    if (endPoint === "/append") {
-//        fs.appendFile(queryData.file + '.txt', queryData.content, function (err) {
-//          if (err) throw err;
-//          res.write('Saved!');
-//        });
+    if (endPoint.includes("/append")) {
+        console.log("Appending...")
+        handleAppend(req, res, queryData);
     }
-    else if (endPoint === "/reset") {
-       
+    else if (endPoint.includes("/reset")) {
+        handleReset(req, res, queryData);
     }
-    else if(endPoint === "/print") {
-       
+    else if (endPoint.includes("/print")) {
+        handlePrint(req, res, queryData);
     }
-    res.end("\nGood Bye");
+
 }).listen(8080);
 
 
-//function handleAppend(req, res, data) {
-//    
-//    fs.appendFileSync("C:\Users\Lasse\Desktop\serverexample\\" + data.file + '.txt', data.content, function (err) {
-//      if (err) throw err;
-//      res.write('Saved!');
-//    });
-//}
-
-//function handleReset(req, res) {
-//    var q = url.parse(req.url, true).query;
-//    
-//    fs.writeFile(q.file + '.txt', "", function (err) {
-//        if (err) throw err;
-//        res.write("File with the name: " + q.file + ".txt has been reset")
-//    })
-//}
-
-function callbackFunction(err, result)
-{
-    console.log("this is a callback");
+function handleAppend(req, res, data) {
+    
+    fs.appendFileSync(data.file + '.txt', data.content + "\n", function (err, result) {
+      if (err) throw err;
+      res.write('Saved!');
+    });
+    res.end("\nGood Bye");
 }
 
-//function handlePrint(req, res) {
-//    var q = url.parse(req.url, true).query;
-//    
-//    fs.readFile(q.file + ".txt", function (err, data) {
-//        res.write(data)
-//    })
-//    res.write("print")
-//}
+function handleReset(req, res, data) {
+    
+    fs.writeFileSync(data.file + '.txt', "")
+    res.end("\nGood Bye");
+}
+
+function handlePrint(req, res, queryData) {
+    
+    var data = fs.readFileSync(queryData.file + ".txt").toString().split(String.fromCharCode(10));
+    var collectedString = "";
+    for (var i = 0; i < data.length; i++) {
+        res.write(data[i] + "<br>")
+    } 
+    
+    res.end("\nGood Bye");
+}
 
 console.log("Running...")
+
+
+
+
+
+
+
+
+
