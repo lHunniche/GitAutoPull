@@ -42,12 +42,13 @@ function handleReset(req, res, data) {
 }
 
 function handlePrint(req, res, queryData) {
-    
-    var data = fs.readFileSync(queryData.file + ".txt").toString().split(String.fromCharCode(10));
-    var collectedString = "";
-    for (var i = 0; i < data.length; i++) {
-        res.write(data[i] + "<br>")
-    } 
+    if (fs.existsSync(queryData.file + ".txt")) {
+        var data = fs.readFileSync(queryData.file + ".txt").toString().split(String.fromCharCode(10));
+        var collectedString = "";
+        for (var i = 0; i < data.length; i++) {
+            res.write(data[i] + "<br>")
+        } 
+    }
     
     res.end("\nGood Bye");
 }
