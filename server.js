@@ -19,6 +19,9 @@ http.createServer(function (req, res) {
     else if (endPoint.includes("/print")) {
         handlePrint(req, res, queryData);
     }
+    else{
+        res.end("Good bye suckah");
+    }
 
 }).listen(8080);
 
