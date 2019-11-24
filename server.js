@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
+var shell = require('shelljs')
 
 http.createServer(function (req, res) {
     res.writeHead(200, {
@@ -18,6 +19,9 @@ http.createServer(function (req, res) {
     }
     else if (endPoint.includes("/print")) {
         handlePrint(req, res, queryData);
+    }
+    else if (endPoint.includes("/githook")) {
+        handleGitPull(queryData);
     }
     else{
         res.end("Good bye suckah");
@@ -51,6 +55,12 @@ function handlePrint(req, res, queryData) {
     }
     
     res.end("\nGood Bye");
+}
+
+function handleGitPull(queryData) {
+    if (queryData.id === 1) {
+        shell.exec("pull.sh");
+    }
 }
 
 console.log("Running...")
