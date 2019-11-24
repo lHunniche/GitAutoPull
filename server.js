@@ -54,7 +54,7 @@ function handlePrint(req, res, queryData) {
         } 
     }
     
-    res.end("\nPrinting has seized...");
+    res.end("\nBecel");
 }
 
 function handleGitPull(req, res, queryData) {
