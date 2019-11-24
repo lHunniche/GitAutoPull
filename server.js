@@ -58,7 +58,7 @@ function handlePrint(req, res, queryData) {
 }
 
 function handleGitPull(req, res, queryData) {
-    if (queryData.id === 1) {
+    if (queryData.id === "1") {
         shell.exec("pull.sh");
     }
     res.end("Pulling..")
