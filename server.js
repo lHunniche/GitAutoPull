@@ -21,7 +21,7 @@ http.createServer(function (req, res) {
         handlePrint(req, res, queryData);
     }
     else if (endPoint.includes("/githook")) {
-        handleGitPull(queryData);
+        handleGitPull(req, res, queryData);
     }
     else{
         res.end("Good bye suckah");
@@ -57,10 +57,11 @@ function handlePrint(req, res, queryData) {
     res.end("\nGood Bye");
 }
 
-function handleGitPull(queryData) {
+function handleGitPull(req, res, queryData) {
     if (queryData.id === 1) {
         shell.exec("pull.sh");
     }
+    res.end("Pulling..")
 }
 
 console.log("Running...")
