@@ -59,7 +59,7 @@ function handlePrint(req, res, queryData) {
 
 function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
-        shell.exec("/home/pi/Documents/NodeServerMobileSystems/pull.sh");
+        shell.exec("bash /home/pi/Documents/NodeServerMobileSystems/pull.sh");
     }
     res.end("Pulling..")
 }
