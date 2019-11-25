@@ -54,7 +54,7 @@ function handlePrint(req, res, queryData) {
         } 
     }
     
-    res.end("\nBecel");
+    res.end("\nMads!");
 }
 
 function handleGitPull(req, res, queryData) {
