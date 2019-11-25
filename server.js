@@ -61,6 +61,9 @@ function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
         shell.exec("bash /home/pi/Documents/NodeServerMobileSystems/pull.sh");
     }
+    else if (queryData.id === "2") {
+        shell.exec("bash /home/pi/Documents/NodeServerMobileSystems/pullDataScience.sh");
+    }
     res.end("Pulling..")
 }
 
