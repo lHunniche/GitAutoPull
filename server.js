@@ -54,7 +54,7 @@ function handlePrint(req, res, queryData) {
         } 
     }
     
-    res.end("\nMads!");
+    res.end("\nDone Printing!");
 }
 
 function handleGitPull(req, res, queryData) {
