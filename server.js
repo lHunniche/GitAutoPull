@@ -59,13 +59,13 @@ function handlePrint(req, res, queryData) {
 
 function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
-        shell.exec("bash /home/pi/Documents/NodeServerMobileSystems/pull.sh");
+        shell.exec("bash /home/pi/github/NodeServerMobileSystems/pull.sh");
     }
     else if (queryData.id === "2") {
-        shell.exec("bash /home/pi/Documents/NodeServerMobileSystems/pullDataScience.sh");
+        shell.exec("bash /home/pi/github/NodeServerMobileSystems/pullDataScience.sh");
     }
     else if (queryData.id === "3") {
-        shell.exec("bash /home/pi/Documents/NodeServerMobileSystems/pullIot.sh");
+        shell.exec("bash /home/pi/github/NodeServerMobileSystems/pullIot.sh");
     }
     res.end("Pulling..")
 }
