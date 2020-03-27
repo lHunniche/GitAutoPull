@@ -67,7 +67,7 @@ function handleGitPull(req, res, queryData) {
     else if (queryData.id === "3") {
         shell.exec("bash /home/pi/github/NodeServerMobileSystems/pullIot.sh");
     }
-    res.end("Pulling...")
+    res.end("Pulling..")
 }
 
 console.log("Running...")
