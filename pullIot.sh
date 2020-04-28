@@ -1,7 +1,7 @@
-cd /var/www/Iot_Project
+cd /var/www/IoT_Project
 git reset --hard
 git pull
 
-cd /home/pi/github/Iot_Project
+cd /home/pi/github/IoT_Project
 git reset --hard
 git pull
