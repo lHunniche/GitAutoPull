@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
         handleGitPull(req, res, queryData);
     }
     else{
-        res.end("Good bye");
+        res.end("Good bye dude");
     }
 
 }).listen(8082);
