@@ -35,6 +35,9 @@ function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
         shell.exec("bash /root/github/GitAutoPull/pullBandim.sh");
     }
+    else if (queryData.id === "2") {
+        shell.exec("bash /root/github/GitAutoPull/pullBandimMaster.sh");
+    }
     /*else if (queryData.id === "2") {
         shell.exec("bash /home/pi/github/GitAutoPull/pullDataScience.sh");
     }
