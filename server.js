@@ -24,10 +24,7 @@ http.createServer(function (req, res) {
 
 function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
-        shell.exec("bash /root/github/GitAutoPull/pullBandim.sh");
-    }
-    else if (queryData.id === "2") {
-        shell.exec("bash /root/github/GitAutoPull/pullBandimMaster.sh");
+        shell.exec("bash /home/lklev16/github/GitAutoPull/pullBandim.sh");
     }
     res.end("Pulling..")
 }
