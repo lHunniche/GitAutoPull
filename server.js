@@ -24,6 +24,7 @@ http.createServer(function (req, res) {
 
 function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
+        console.log("Pulling dev branch")
         shell.exec("bash /home/lklev16/github/GitAutoPull/pullBandimDev.sh");
     }
     res.end("Pulling..")
