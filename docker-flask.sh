@@ -22,6 +22,6 @@ if [[ $(docker ps | grep $CONTAINER) ]]; then
     docker stop $CONTAINER
     docker rm $CONTAINER
     docker run --name $CONTAINER -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
-if
+fi
 
 docker run --name $CONTAINER -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
