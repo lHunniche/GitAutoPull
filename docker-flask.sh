@@ -24,4 +24,4 @@ if [[ $(docker ps | grep $CONTAINER) ]]; then
     docker run --name $CONTAINER -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
 fi
 
-docker run --name $CONTAINER -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
+docker run --name $CONTAINER --network="host" -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
