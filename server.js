@@ -31,6 +31,10 @@ function handleGitPull(req, res, queryData) {
         console.log("Pulling master branch");
         shell.exec("bash /home/lklev16/github/GitAutoPull/pullBandim.sh");
     }
+    else if (queryData.id === "3") {
+        console.log("Running master docker image");
+        shell.exec("bash /home/lklev16/github/GitAutoPull/docker-flask.sh");
+    }
     res.end("Pulling..")
 }
 

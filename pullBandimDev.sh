@@ -11,5 +11,7 @@ sudo chmod u+x SurveyApplication/gradlew
 cd /home/lklev16/github/GitAutoPull
 bash build_bandim_react_app.sh /home/lklev16/github/Bandim-HDSS-dev/bandim-app
 
-cd /home/lklev16/github/Bandim-HDSS-dev/webserver/build
-docker run --rm -v $PWD:/source -v react-app-dev:/dest -w /source alpine cp -r * /dest
+#cd /home/lklev16/github/Bandim-HDSS-dev/webserver/build
+
+# this line copies the built react app into the docker volume the webserver looks at
+#docker run --rm -v $PWD:/source -v react-app-dev:/dest -w /source alpine cp -r * /dest
