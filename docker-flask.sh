@@ -16,4 +16,12 @@ docker run --rm -v $PWD:/source -v react-app:/dest -w /source alpine cp -r * /de
 
 # finally the new image is pulled down, and run
 docker pull hunniche/bandim-flask:1.0
-docker run --name flask-master-container -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
+CONTAINER=flask-master-container # name of the container we will be checking/starting
+
+if [[ $(docker ps | grep $CONTAINER) ]]; then
+    docker stop $CONTAINER
+    docker rm $CONTAINER
+    docker run --name $CONTAINER -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
+if
+
+docker run --name $CONTAINER -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
