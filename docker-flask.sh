@@ -18,7 +18,7 @@ docker run --rm -v $PWD:/source -v react-app:/dest -w /source alpine cp -r * /de
 docker pull hunniche/bandim-flask:1.0
 CONTAINER=flask-master-container # name of the container we will be checking/starting
 
-if [[ $(docker ps | grep $CONTAINER) ]]; then
+if [[ $(docker ps -a | grep $CONTAINER) ]]; then
     echo "Container is already running. Restarting..."
     docker stop $CONTAINER
     docker rm $CONTAINER
