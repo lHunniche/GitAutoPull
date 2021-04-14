@@ -22,9 +22,23 @@ if [[ $(docker ps -a | grep $CONTAINER) ]]; then
     echo "Container is already running. Restarting..."
     docker stop $CONTAINER
     docker rm $CONTAINER
-    docker run --name $CONTAINER --network="host" -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
+    docker run \
+        --name $CONTAINER \
+        --network="host" \
+        -d \
+        -p 443:443 \
+        -v react-app:/app/build \
+        -v master-log:/app/_logging \
+        hunniche/bandim-flask:1.0
     
 else
     echo "Container doesn't already exist. Creating new..."
-    docker run --name $CONTAINER --network="host" -d -p 443:443 -v react-app:/app/build hunniche/bandim-flask:1.0
+    docker run \
+        --name $CONTAINER \
+        --network="host" \
+        -d \
+        -p 443:443 \
+        -v react-app:/app/build \
+        -v master-log:/app/_logging \
+        hunniche/bandim-flask:1.0
 fi
