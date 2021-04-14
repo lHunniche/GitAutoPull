@@ -11,7 +11,7 @@ cd /home/lklev16/github/GitAutoPull
 bash build_bandim_react_app.sh /home/lklev16/github/Bandim-HDSS/bandim-app
 
 #this copies the built react app into the docker volume the webserver looks at
-cd /home/lklev16/github/Bandim-HDSS-dev/webserver/build
+cd /home/lklev16/github/Bandim-HDSS/webserver/build
 docker run --rm -v $PWD:/source -v react-app:/dest -w /source alpine cp -r * /dest
 
 # finally the new image is pulled down, and run
