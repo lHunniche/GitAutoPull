@@ -33,7 +33,7 @@ function handleGitPull(req, res, queryData) {
     }
     else if (queryData.id === "3") {
         console.log("Running master docker image");
-        shell.exec("bash /home/lklev16/github/GitAutoPull/docker-flask.sh");
+        //shell.exec("bash /home/lklev16/github/GitAutoPull/docker-flask.sh");
     }
     res.end("Pulling..")
 }
