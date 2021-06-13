@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def background_call(line):
-    kwargs = {"shell", True}
+    kwargs = {"shell": True}
     threading.Thread(target=call, args=line, kwargs=kwargs).start()
 
 
