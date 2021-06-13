@@ -78,12 +78,3 @@ function handleGitPull(req, res, queryData) {
 }
 
 console.log("Running...")
-
-
-
-
-
-
-
-
-
