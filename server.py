@@ -8,7 +8,7 @@ app = Flask(__name__)
 def background_call(line):
     def inner():
         call(line, shell=True)
-    threading.Thread(inner).start()
+    threading.Thread(target=inner).start()
 
 
 @app.route("/githook", methods=["GET"])
