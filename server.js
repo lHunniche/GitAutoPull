@@ -71,6 +71,9 @@ function handleGitPull(req, res, queryData) {
     else if (queryData.id === "4") {
         shell.exec("bash /home/pi/github/GitAutoPull/pullWishList.sh");
     }
+    else if (queryData.id === "5") {
+        shell.exec("sudo bash /var/www/dimission/pull");
+    }
     res.end("Pulling..")
 }
 
