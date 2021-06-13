@@ -62,12 +62,6 @@ function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
         shell.exec("bash /home/pi/github/GitAutoPull/pull.sh");
     }
-    else if (queryData.id === "2") {
-        shell.exec("bash /home/pi/github/GitAutoPull/pullDataScience.sh");
-    }
-    else if (queryData.id === "3") {
-        shell.exec("bash /home/pi/github/GitAutoPull/pullIot.sh");
-    }
     else if (queryData.id === "4") {
         shell.exec("bash /home/pi/github/GitAutoPull/pullWishList.sh");
     }
