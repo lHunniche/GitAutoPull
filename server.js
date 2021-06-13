@@ -29,35 +29,6 @@ http.createServer(function (req, res) {
 
 }).listen(8082);
 
-
-/*function handleAppend(req, res, data) {
-    
-    fs.appendFileSync(data.file + '.txt', data.content + "\n", function (err, result) {
-      if (err) throw err;
-      res.write('Saved!');
-    });
-    res.end("\nGood Bye");
-}
-
-function handleReset(req, res, data) {
-    
-    fs.writeFileSync(data.file + '.txt', "")
-    res.end("\nGood Bye");
-}
-
-function handlePrint(req, res, queryData) {
-    if (fs.existsSync(queryData.file + ".txt")) {
-        var data = fs.readFileSync(queryData.file + ".txt").toString().split(String.fromCharCode(10));
-        var collectedString = "";
-        for (var i = 0; i < data.length; i++) {
-            res.write(data[i] + "<br>")
-        } 
-    }
-    
-    res.end("\nDone!");
-}
-*/
-
 function handleGitPull(req, res, queryData) {
     if (queryData.id === "1") {
         shell.exec("bash /home/pi/github/GitAutoPull/pull.sh");
@@ -72,7 +43,3 @@ function handleGitPull(req, res, queryData) {
 }
 
 console.log("Running...")
-
-
-
-//abe

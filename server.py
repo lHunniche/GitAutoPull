@@ -11,7 +11,7 @@ def background_call(line):
     threading.Thread(target=inner).start()
 
 
-@app.route("/githook", methods=["GET"])
+@app.route("/githook", methods=["GET", "POST"])
 def githook():
     id = request.args.get("id")
     if not id:
